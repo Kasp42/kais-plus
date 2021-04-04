@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Kais+
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
 // @description  try to take over the world!
 // @author       You
 // @match        https://kais-shop.ru/*
@@ -27,7 +27,7 @@
     {
       var jq_this = $(this);
       var jq_img = jq_this.find('img[role="presentation"]');
-      var jq_button = $('<button data-name="'+s_article+'--'+(i_img+1)+'.png">IMG '+(i_img+1)+'</button>')
+      var jq_button = $('<button style="margin-right: 7px;" data-name="'+s_article+'--'+(i_img+1)+'.png">IMG '+(i_img+1)+'</button>')
       if(jq_img.length === 0)
       {
         checkElement(jq_this,'img[role="presentation"]').then((element) => {
@@ -74,7 +74,7 @@
       jq_this.find('.catalog-section-item-image-block .catalog-section-item-image-wrapper img').each(function(i_img)
       {
         var jq_this_img = $(this);
-        var jq_button = $('<button data-name="'+s_article+'--'+(i_img+1)+'.png">IMG '+(i_img+1)+'</button>');
+        var jq_button = $('<button style="margin-right: 7px;" data-name="'+s_article+'--'+(i_img+1)+'.png">IMG '+(i_img+1)+'</button>');
         if(jq_this_img.filter('[src$=".svg"]').length > 0)
         {
           jq_button.data('img',jq_this_img.data('original').replace('/resize_cache','').replace('/450_450_0',''));
