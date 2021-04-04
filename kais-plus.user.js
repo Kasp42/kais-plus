@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Kais+
 // @namespace    http://tampermonkey.net/
-// @version      0.3
-// @description  try to take over the world!
-// @author       You
+// @version      0.4
+// @description  Add new feature for site kais
+// @author       Kasper
 // @match        https://kais-shop.ru/*
 // @grant        GM_deleteValue
 // @grant        GM_getValue
@@ -56,8 +56,11 @@
       });
       jq_img_container.append(jq_button);
     });
-
-    $('.catalog-element-purchase-counter-control input').val(1000).trigger('change');
+    
+    setTimeout(function()
+    {
+      $('.catalog-element-purchase-counter-control input').val(1000).trigger('change');
+    },1000);
   }
   else
   {
@@ -105,8 +108,10 @@
 
         jq_img_container.append(jq_button);
       });
-
-      $('.catalog-section-item-counter-block input').val(1000).trigger('change');
+      setTimeout(function()
+      {
+        $('.catalog-section-item-counter-block input').val(1000).trigger('change');
+      },1000);
     });
   }
 })();
