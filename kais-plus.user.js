@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Kais+
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  try to take over the world!
 // @author       You
 // @match        https://kais-shop.ru/*
@@ -57,16 +57,6 @@
       jq_img_container.append(jq_button);
     });
 
-    console.log(a_image);
-
-    var jq_catalog_element = $('.c-catalog-element[data-data]');
-    /*var a_data = jq_catalog_element.data('data');
-    if(a_data.hasOwnProperty('quantity') && a_data.quantity.hasOwnProperty('value'))
-    {
-      var i_count = a_data.quantity.value;
-
-    }*/
-
     $('.catalog-element-purchase-counter-control input').val(1000).trigger('change');
   }
   else
@@ -115,8 +105,6 @@
 
         jq_img_container.append(jq_button);
       });
-
-      console.log(a_item_list);
 
       $('.catalog-section-item-counter-block input').val(1000).trigger('change');
     });
